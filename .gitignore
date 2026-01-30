@@ -1,0 +1,13 @@
+
+# Common ignores
+.DS_Store
+node_modules
+.env
+.idea
+.vscode
+dist
+build
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock

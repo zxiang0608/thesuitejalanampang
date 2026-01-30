@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLCC Fully Furnished Suite – Airbnb vs Monthly Calculator</title>
+    <meta name="description"
+        content="Run the rental math for a fully furnished suite in Kuala Lumpur city centre near KLCC. Compare short-stay (Airbnb) vs monthly rental with clear assumptions, costs, and nearby proof.">
+    <link rel="canonical" href="https://thesuites-jalanamapang.com/">
+    <meta name="robots" content="index,follow">
+    <link rel="preload" as="image" href="./assets/klcc-city-centre-skyline-hero.jpg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="KLCC Fully Furnished Suite – Airbnb vs Monthly Calculator">
+    <meta property="og:description"
+        content="Run the rental math for a fully furnished suite in Kuala Lumpur city centre near KLCC. Compare short-stay (Airbnb) vs monthly rental with clear assumptions, costs, and nearby proof.">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KLCC Fully Furnished Suite – Airbnb vs Monthly Calculator">
+    <meta name="twitter:description"
+        content="Run the rental math for a fully furnished suite in Kuala Lumpur city centre near KLCC. Compare short-stay (Airbnb) vs monthly rental with clear assumptions, costs, and nearby proof.">
+
+    <!-- Fonts: Helvetica Neue (System) -->
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                        mono: ['SF Mono', 'ui-monospace', 'Menlo', 'monospace'],
+                    },
+                    colors: {
+                        apple: {
+                            bg: '#f5f5f7',            /* Official Apple Grey Background */
+                            card: '#ffffff',          /* Pure White Cards */
+                            text: '#1d1d1f',          /* Almost Black text */
+                            subtext: '#86868b',       /* Secondary Grey */
+                            blue: '#0066cc',          /* Apple Link Blue */
+                            blue_dark: '#004499',
+                            red: '#ff3b30',           /* Apple System Red */
+                            green: '#34c759',         /* Apple System Green */
+                            orange: '#ff9500',        /* Apple System Orange */
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 1px 3px rgba(0,0,0,0.02)', // Barely visible
+                        'floating': '0 4px 12px rgba(0,0,0,0.05)', // Reduced floating
+
+                    },
+                    letterSpacing: {
+                        'tightest': '-0.025em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hide Scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* iOS Toggle Switch */
+        .ios-toggle {
+            transition: 0.3s;
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "The Suites, Jalan Ampang KL",
+          "url": "https://thesuites-jalanamapang.com/",
+          "sameAs": [] 
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "The Suites, Jalan Ampang KL — Real Numbers",
+          "url": "https://thesuites-jalanamapang.com/",
+          "mainEntity": {
+            "@type": "Article",
+            "headline": "The Suites, Jalan Ampang KL: Real Numbers Investment Audit",
+            "dateModified": "2026-01-22",
+            "author": {
+                "@type": "Organization",
+                "name": "The Property Audit"
+            },
+            "about": [
+                { "@type": "Place", "name": "Gleneagles Hospital Kuala Lumpur" },
+                { "@type": "Place", "name": "Jalan Ampang" }
+            ]
+          }
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is this located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kuala Lumpur city centre, near KLCC and close to major demand drivers such as Gleneagles Hospital Kuala Lumpur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is short-stay (Airbnb) allowed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — short-stay is allowed. Always follow the building’s house rules and guest registration requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does “fully furnished” include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Units are fully furnished and rental-ready. Exact furnishing list can be shared privately on request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What costs does the calculator include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Net includes full loan repayment plus estimated operating costs (fees, utilities, maintenance). It’s an estimate, not a guarantee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens during low season?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Short-stay income can fluctuate by season. Use conservative assumptions to stress-test the numbers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I switch to monthly rental instead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many owners switch strategies depending on market conditions and personal preference."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who manages operations and what is included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A professional operator can manage listing, guest communication, cleaning coordination, and basic upkeep (scope depends on package)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What unit type performs best for rental?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Smaller, efficient layouts often perform better for rental demand. We can share unit-by-unit suggestions privately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the biggest risks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Main risks include seasonality, competition, and execution. Always compare net returns after all costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What info will I receive after WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You’ll receive the latest unit list, pricing, and availability, plus a quick walkthrough based on your selected strategy."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+
+    <!-- NAVIGATION (Floating Dynamic Island) -->
+
+
+    <main class="w-full max-w-6xl mx-auto px-6 pb-20 pt-12">
+
+        <!-- HERO SECTION (Centered, Big Type) -->
+        <section class="text-center mb-24 fade-in-up">
+
+            <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter text-apple-text mb-6 max-w-5xl mx-auto">
+                Our Project near KLCC: <br />
+                <span class="text-gray-500">Most units can pay for themselves — with extra left.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-apple-text font-normal max-w-3xl mx-auto leading-relaxed mb-8">
+                Run the rent vs instalment math in seconds — <br class="hidden md:block" />
+                <span class="text-apple-subtext">then see how it stacks up against 2026 new launches.</span>
+            </p>
+
+
+
+            <!-- Simplified Trust Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 mb-16">
+                <span class="w-1.5 h-1.5 rounded-full bg-apple-green"></span>
+                <span class="text-[11px] font-bold text-apple-subtext uppercase tracking-wide">Proof shown • Assumptions
+                    shown • Updated</span>
+            </div>
+
+            <!-- HERO IMAGE -->
+            <div class="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden border border-gray-100 group">
+                <img src="./assets/klcc-city-centre-skyline-hero.jpg" alt="Kuala Lumpur city centre skyline near KLCC"
+                    class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
+                    loading="eager" decoding="async" width="1024" height="512">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- KEY FACTS (Inserted) -->
+        <section class="max-w-6xl mx-auto mb-20 fade-in-up">
+            <div class="bg-white rounded-2xl p-6 md:p-10 border border-gray-100 shadow-soft text-center">
+                <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-apple-text mb-8">Key Facts</h2>
+                <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-12">
+                    <div>
+                        <dt class="text-xs font-bold uppercase text-apple-subtext tracking-widest mb-2">Location</dt>
+                        <dd class="text-lg font-medium text-apple-text leading-tight">Ampang Park–KLCC area</dd>
+                    </div>
+                    <div>
+                        <dt class="text-xs font-bold uppercase text-apple-subtext tracking-widest mb-2">Type</dt>
+                        <dd class="text-lg font-medium text-apple-text leading-tight">Fully furnished</dd>
+                    </div>
+                    <div>
+                        <dt class="text-xs font-bold uppercase text-apple-subtext tracking-widest mb-2">Strategy</dt>
+                        <dd class="text-lg font-medium text-apple-text leading-tight">Airbnb / Monthly rental</dd>
+                    </div>
+                    <div>
+                        <dt class="text-xs font-bold uppercase text-apple-subtext tracking-widest mb-2">Demand drivers
+                        </dt>
+                        <dd class="text-lg font-medium text-apple-text leading-tight">Near Gleneagles Hospital KL</dd>
+                    </div>
+                    <div>
+                        <dt class="text-xs font-bold uppercase text-apple-subtext tracking-widest mb-2">Management</dt>
+                        <dd class="text-lg font-medium text-apple-text leading-tight">Professional operator</dd>
+                    </div>
+                    <div>
+                        <dt class="text-xs font-bold uppercase text-apple-subtext tracking-widest mb-2">Last updated
+                        </dt>
+                        <dd class="text-lg font-medium text-apple-text leading-tight">2026-01-29</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- STACKED LAYOUT (Vertical Journey) -->
+        <div class="flex flex-col gap-8">
+
+            <!-- SECTION 1: MANAGEMENT CHECK (Refactored Unified System) -->
+            <div class="space-y-8" id="management-check">
+
+                <!-- TITLE (Centered) -->
+                <div class="text-center mb-0 md:mb-8">
+                    <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-apple-text">Management Check.</h2>
+                </div>
+
+                <!-- UNIFIED GRID (Desktop: 60/40 Split) -->
+                <div class="grid grid-cols-1 md:grid-cols-[55%_45%] gap-6 md:gap-12 items-start px-4 md:px-0">
+
+                    <!-- LEFT COLUMN: Photo Evidence Card -->
+                    <div class="order-1 md:order-1 w-full">
+                        <!-- Simplified Image Card (Naked) -->
+                        <div class="h-full">
+                            <div class="relative w-full h-[220px] md:h-[380px] rounded-2xl overflow-hidden cursor-zoom-in shadow-sm"
+                                onclick="openModal('mou')">
+                                <img src="./assets/management-check-mou.jpg"
+                                    class="w-full h-full object-cover object-[50%_30%] md:object-cover md:object-center hover:scale-105 transition-transform duration-700"
+                                    alt="Management check supporting document and partnership photo" loading="lazy"
+                                    decoding="async" width="1024" height="867">
+                            </div>
+                            <p class="text-xs md:text-sm font-medium text-apple-text text-center mt-3 mb-1">Maxi
+                                Manhattan × Gleneagles Hospital KL — Signing Ceremony</p>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: Unified Verification Card -->
+                    <div class="order-2 md:order-2 w-full h-full">
+                        <div class="h-full flex flex-col justify-center text-center px-4 md:px-0">
+
+                            <!-- Panel 1: Managed By -->
+                            <div class="space-y-4 pb-6 border-b border-gray-100 flex flex-col items-center">
+                                <span
+                                    class="bg-gray-100 text-gray-600 px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wider">Managed
+                                    by</span>
+                                <div>
+                                    <p
+                                        class="text-3xl md:text-4xl font-semibold text-apple-text tracking-tight leading-none mb-3">
+                                        Maxi Manhattan (7 years)</p>
+                                    <div class="flex items-center justify-center gap-2 text-base text-gray-500">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-apple-green"></div>
+                                        <p>1,200+ rooms managed • 80%+ avg occupancy</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Panel 2: Tenant Ready -->
+                            <div class="pt-4 md:pt-5">
+                                <h3 class="text-2xl font-medium text-apple-text text-center mb-5">Fully Furnished |
+                                    Tenant Ready</h3>
+
+                                <div class="w-full max-w-[520px] mx-auto text-center space-y-3">
+                                    <!-- Demand Driver -->
+                                    <p class="text-lg text-apple-text">
+                                        <span class="font-semibold">Demand Driver:</span>
+                                        <span class="text-gray-500">Gleneagles Hospital KL</span>
+                                    </p>
+
+                                    <!-- Distance -->
+                                    <p class="text-lg text-apple-text">
+                                        <span class="font-semibold">Distance:</span>
+                                        <span class="text-gray-500">160m walk</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- UNIFIED INVESTMENT LOGIC ENGINE: RUN THE NUMBERS -->
+            <section
+                class="bg-white rounded-2xl p-6 md:p-12 border border-gray-100 relative overflow-hidden max-w-6xl mx-auto w-full mb-16"
+                id="invest-engine">
+
+                <div class="mb-8 md:mb-10 text-center">
+                    <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-apple-text mb-2">Run the Numbers.
+                    </h2>
+                    <p class="text-apple-subtext text-lg">Pick a unit + strategy. We’ll show monthly buffer after costs.
+                    </p>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-[55%_45%] gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+
+                    <!-- LEFT COLUMN: INPUTS & BREAKDOWN -->
+                    <div class="order-1 md:order-1 space-y-8 md:pr-8">
+
+                        <!-- Inputs Block (Unified) -->
+                        <div class="space-y-6">
+                            <!-- Unit Selector -->
+                            <div>
+                                <label
+                                    class="block text-xs font-bold uppercase text-apple-subtext tracking-widest mb-2">Select
+                                    Unit</label>
+                                <select id="unit-selector" onchange="setUnit(this.value)"
+                                    class="w-full p-4 bg-gray-50 border-none rounded-xl text-apple-text font-bold text-lg focus:ring-2 focus:ring-gray-200 outline-none appearance-none cursor-pointer hover:bg-gray-100 transition-colors">
+                                    <!-- JS Generated Options -->
+                                </select>
+                            </div>
+
+                            <!-- Strategy Toggle -->
+                            <div>
+                                <label
+                                    class="block text-xs font-bold uppercase text-apple-subtext tracking-widest mb-2">Strategy</label>
+                                <div class="grid grid-cols-2 gap-2 bg-gray-100 p-1 rounded-xl">
+                                    <button onclick="setPlan('stable')" id="btn-plan-stable"
+                                        class="py-2 px-3 rounded-lg text-sm font-bold shadow-sm bg-white text-apple-text transition-all">
+                                        Stable Rent (long term)
+                                    </button>
+                                    <button onclick="setPlan('high')" id="btn-plan-high"
+                                        class="py-2 px-3 rounded-lg text-sm font-bold text-gray-400 hover:text-apple-text transition-all">
+                                        Airbnb (18 nights/month)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="h-px bg-gray-100 w-full"></div>
+
+                        <!-- Breakdown List & CTA -->
+                        <div id="dynamic-summary">
+                            <!-- JS INJECTED: Breakdown List + CTA -->
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT COLUMN: RESULTS (Hero Metric) -->
+                    <div class="order-2 md:order-2 pt-8 md:pt-0 md:pl-12 flex flex-col justify-center"
+                        id="dynamic-result">
+                        <!-- JS INJECTED: Net Cashflow, Status, Micro-Closing -->
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- BLOCK 4: MARKET COMPARISON (New Insert) -->
+            <section class="max-w-6xl mx-auto mb-20 px-6 md:px-0" id="market-proof">
+                <div class="mb-10 text-center">
+                    <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-apple-text mb-2">Market Snapshot
+                        (Proof)</h2>
+                    <p class="text-apple-subtext text-lg">These are real nearby listings used to set conservative
+                        defaults for the calculator.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Left: Airbnb Proof -->
+                    <div class="flex flex-col gap-4 text-center items-center">
+                        <h3 class="text-xl font-semibold text-apple-text">Airbnb nightly range (nearby)</h3>
+                        <!-- Crop Container -->
+                        <div
+                            class="w-full aspect-square md:aspect-auto md:h-[500px] overflow-hidden border border-gray-200 rounded-sm">
+                            <img src="./assets/market-snapshot-short-stay-nightly-range.jpg"
+                                alt="Market snapshot of short-stay nightly rates near KLCC"
+                                class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                                loading="lazy" decoding="async" width="1024" height="1022">
+                        </div>
+                        <p class="text-sm text-apple-subtext font-medium">Observed short-stay nightly range nearby: RM
+                            311 – RM 499<br><span class="text-xs opacity-75">(captured 29/01/2026)</span></p>
+                    </div>
+
+                    <!-- Right: Long Stay Proof -->
+                    <div class="flex flex-col gap-4 text-center items-center">
+                        <h3 class="text-xl font-semibold text-apple-text">Monthly Rental (similar area)</h3>
+                        <!-- Crop Container -->
+                        <div
+                            class="w-full aspect-square md:aspect-auto md:h-[500px] overflow-hidden border border-gray-200 rounded-sm">
+                            <img src="./assets/market-snapshot-monthly-rent-near-klcc.png"
+                                alt="Market snapshot of monthly rents near KLCC"
+                                class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                                loading="lazy" decoding="async" width="854" height="856">
+                        </div>
+                        <p class="text-sm text-apple-subtext font-medium">Comparable monthly rents nearby: RM
+                            2,500/month<br><span class="text-xs opacity-75">(captured 29/01/2026)</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOCK 5: FEATURE COMPARISON -->
+            <!-- BLOCK 5: FEATURE COMPARISON -->
+            <section class="bg-white rounded-2xl p-8 md:p-12 border border-gray-100" id="comparison">
+                <div class="mb-10 text-center">
+                    <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-apple-text mb-2">Compare it like
+                        an investor.</h2>
+                    <p class="text-apple-subtext text-lg">A quick side-by-side on the things that change your cashflow.
+                    </p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="py-6 pl-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wide w-1/4">
+                                    Feature</th>
+                                <!-- Middle Column: Highlighted Header -->
+                                <th
+                                    class="py-6 px-4 text-center bg-[#F6F7F9] rounded-t-2xl text-sm font-bold text-gray-900 uppercase tracking-wide w-1/3">
+                                    Our Project
+                                </th>
+                                <th
+                                    class="py-6 px-4 text-center text-sm font-bold text-gray-400 uppercase tracking-wide w-1/3">
+                                    Typical KL SOHO
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-base text-apple-text">
+                            <!-- Row 1: Hospital -->
+                            <tr class="border-b border-gray-100 last:border-0">
+                                <td class="py-6 pl-4 font-semibold text-gray-900 align-middle">Hospital connection</td>
+                                <td class="py-6 px-4 bg-[#F6F7F9] text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-bold text-gray-900">Official partner</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4 text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-medium text-gray-500">No official partner</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 2: Management -->
+                            <tr class="border-b border-gray-100 last:border-0">
+                                <td class="py-6 pl-4 font-semibold text-gray-900 align-middle">Management</td>
+                                <td class="py-6 px-4 bg-[#F6F7F9] text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-bold text-gray-900">Managed</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4 text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-medium text-gray-500">Self-managed</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 3: Furnishing -->
+                            <tr class="border-b border-gray-100 last:border-0">
+                                <td class="py-6 pl-4 font-semibold text-gray-900 align-middle">Furnishing</td>
+                                <td class="py-6 px-4 bg-[#F6F7F9] text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-bold text-gray-900">Fully furnished</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4 text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-medium text-gray-500">Usually partially furnished</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 4: Entry price -->
+                            <tr class="border-b border-gray-100 last:border-0">
+                                <td class="py-6 pl-4 font-semibold text-gray-900 align-middle">Entry price</td>
+                                <td class="py-6 px-4 bg-[#F6F7F9] text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-bold text-gray-900">From ~RM376k</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4 text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-medium text-gray-500">RM550k+</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 5: Extra left -->
+                            <tr>
+                                <td class="py-6 pl-4 font-semibold text-gray-900 align-middle">Extra left</td>
+                                <td class="py-6 px-4 bg-[#F6F7F9] rounded-b-2xl text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-bold text-gray-900">Yes</span>
+                                        <span class="text-sm text-gray-500 font-medium">(see calculator)</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4 text-center align-middle">
+                                    <div class="flex flex-col gap-0.5">
+                                        <span class="font-medium text-gray-500">No</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- BLOCK 6: QUICK REALITY CHECK (New Insert) -->
+            <section class="max-w-6xl mx-auto mt-8 mb-8 px-6 md:px-0 border-t border-b border-gray-100 py-8">
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-apple-text mb-2 text-left">Quick
+                        Reality Check.</h2>
+                    <p class="text-apple-subtext text-lg text-left">Two things to know before you decide.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 text-left">
+                    <!-- Left Block -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-apple-text mb-6">Not for you if...</h3>
+                        <ul class="space-y-4 text-lg text-apple-subtext">
+                            <li class="flex items-start gap-3">
+                                <span class="text-apple-subtext mt-1.5">•</span>
+                                <span>You want a KLCC view (this unit’s view is normal).</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-apple-subtext mt-1.5">•</span>
+                                <span>You need space for a big family.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Right Block -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-apple-text mb-6">Why people rent here</h3>
+                        <ul class="space-y-4 text-lg text-apple-subtext">
+                            <li class="flex items-start gap-3">
+                                <span class="text-apple-subtext mt-1.5">•</span>
+                                <span>Walking distance to Gleneagles Hospital KL — popular for medical tourism
+                                    stays.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-apple-subtext mt-1.5">•</span>
+                                <span>Fully furnished + Airbnb management provided</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LEAD CAPTURE (Editorial Style) -->
+            <section id="get-details" class="max-w-2xl mx-auto mt-12 mb-20 px-6 text-center">
+
+                <div class="mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-apple-text mb-4">Want the full details?</h2>
+                    <p class="text-lg text-apple-subtext">
+                        Get the latest brochure, price list, and available units directly via WhatsApp.
+                    </p>
+                </div>
+
+                <form id="leadForm" method="POST"
+                    action="https://script.google.com/macros/s/AKfycby7l7cM752BgEmk-7948RFmOlNjPkF6H74FuxnUX2EmfqVpu_TiHZ-ZwV9UnCcSo0NB/exec"
+                    class="space-y-4 max-w-md mx-auto"
+                    onsubmit="document.getElementById('unitHidden').value = (UNIT_DB[APP_STATE.unit] ? UNIT_DB[APP_STATE.unit].name : APP_STATE.unit); document.getElementById('strategyHidden').value = APP_STATE.plan;">
+
+                    <input name="name" placeholder="Name" required
+                        class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-base focus:ring-2 focus:ring-apple-text outline-none transition-all" />
+
+                    <input name="phone" type="tel" placeholder="WhatsApp number" required
+                        class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-base focus:ring-2 focus:ring-apple-text outline-none transition-all" />
+
+                    <!-- Hidden fields (auto-filled from calculator selections) -->
+                    <input type="hidden" name="unit" id="unitHidden" />
+                    <input type="hidden" name="strategy" id="strategyHidden" />
+
+                    <button type="submit"
+                        class="w-full bg-apple-text text-white font-bold py-4 rounded-xl text-lg hover:bg-black transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2">
+                        Continue to WhatsApp
+                        <svg class="w-5 h-5 text-apple-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </button>
+
+                    <p class="text-xs text-center text-apple-subtext pt-2">Direct to Management Team • No Spam Guarantee
+                    </p>
+                </form>
+            </section>
+
+
+            <!-- BLOCK 7: FAQ (New Insert) -->
+            <section class="max-w-3xl mx-auto mb-20 px-6 md:px-0">
+                <div class="mb-10 text-center">
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-apple-text mb-2">Frequently Asked
+                        Questions</h2>
+                    <p class="text-apple-subtext text-lg">Common questions from investors and owners.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Q1 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">Where is this
+                                located?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            Kuala Lumpur city centre, near KLCC and close to major demand drivers such as Gleneagles
+                            Hospital Kuala Lumpur.
+                        </div>
+                    </details>
+
+                    <!-- Q2 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">Is short-stay (Airbnb)
+                                allowed?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            Yes — short-stay is allowed. Always follow the building’s house rules and guest registration
+                            requirements.
+                        </div>
+                    </details>
+
+                    <!-- Q3 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">What does “fully
+                                furnished” include?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            Units are fully furnished and rental-ready. Exact furnishing list can be shared privately on
+                            request.
+                        </div>
+                    </details>
+
+                    <!-- Q4 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">What costs does the
+                                calculator include?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            Net includes full loan repayment plus estimated operating costs (fees, utilities,
+                            maintenance). It’s an estimate, not a guarantee.
+                        </div>
+                    </details>
+
+                    <!-- Q5 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">What happens during low
+                                season?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            Short-stay income can fluctuate by season. Use conservative assumptions to stress-test the
+                            numbers.
+                        </div>
+                    </details>
+
+                    <!-- Q6 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">Can I switch to monthly
+                                rental instead?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            Yes. Many owners switch strategies depending on market conditions and personal preference.
+                        </div>
+                    </details>
+
+                    <!-- Q7 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">Who manages operations
+                                and what is included?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            A professional operator can manage listing, guest communication, cleaning coordination, and
+                            basic upkeep (scope depends on package).
+                        </div>
+                    </details>
+
+                    <!-- Q8 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">What unit type performs
+                                best for rental?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            Smaller, efficient layouts often perform better for rental demand. We can share unit-by-unit
+                            suggestions privately.
+                        </div>
+                    </details>
+
+                    <!-- Q9 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">What are the biggest
+                                risks?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            Main risks include seasonality, competition, and execution. Always compare net returns after
+                            all costs.
+                        </div>
+                    </details>
+
+                    <!-- Q10 -->
+                    <details class="group bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                        <summary
+                            class="flex justify-between items-center p-5 cursor-pointer list-none select-none outline-none [&::-webkit-details-marker]:hidden">
+                            <span class="font-semibold text-apple-text text-left leading-normal">What info will I
+                                receive after WhatsApp?</span>
+                            <div
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center transform group-open:rotate-180 transition-transform duration-300 ml-4 text-apple-subtext">
+                                ▼
+                            </div>
+                        </summary>
+                        <div class="px-5 pb-5 pt-0 text-apple-subtext leading-relaxed">
+                            You’ll receive the latest unit list, pricing, and availability, plus a quick walkthrough
+                            based on your selected strategy.
+                        </div>
+                    </details>
+                </div>
+            </section>
+        </div>
+
+        <!-- STICKY MOBILE CTA (Calculated Scroll) -->
+        <div id="sticky-cta"
+            class="fixed bottom-6 inset-x-0 mx-auto max-w-[calc(100%-2rem)] md:max-w-md z-50 transform transition-transform duration-300 translate-y-0">
+            <button id="stickyCta" type="button"
+                onclick="document.getElementById('get-details').scrollIntoView({ behavior: 'smooth' })"
+                class="w-full bg-gradient-to-r from-apple-blue to-apple-green text-white font-bold py-4 rounded-full shadow-2xl hover:shadow-lg flex items-center justify-center gap-2 text-lg">
+                <span>Get Full Details (WhatsApp)</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </button>
+        </div>
+
+
+
+
+        <!-- FOOTER -->
+        <footer class="mt-20 pt-12 border-t border-apple-subtext/10 text-center">
+            <div class="text-xs text-apple-subtext/60">
+                Copyright © 2026 The Property Audit. <br />
+                Independent Analysis. Not affiliated with developer.
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- PROOF MODALS -->
+    <div id="modal-backdrop"
+        class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0"
+        onclick="closeModal()">
+        <div class="bg-white rounded-2xl max-w-2xl w-full relative overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300"
+            id="modal-content" onclick="event.stopPropagation()">
+            <!-- Header -->
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-apple-green animate-pulse"></span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Official Evidence</span>
+                </div>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Image -->
+            <div class="relative bg-gray-100 flex items-center justify-center">
+                <img id="modal-img" src="" class="max-h-[70vh] w-auto mx-auto object-contain">
+            </div>
+            <!-- Caption -->
+            <div class="px-6 py-4 bg-white">
+                <p class="text-sm font-medium text-apple-text" id="modal-caption"></p>
+                <p class="text-xs text-apple-subtext mt-1" id="modal-meta"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS FOR CALCULATORS (Rich Unit Selector Logic) -->
+    <script>
+        var submitted = false;
+
+        /* --- STICKY CTA SCROLL LOGIC --- */
+        document.addEventListener('scroll', function () {
+            const stickyCTA = document.getElementById('sticky-cta');
+            const target = document.getElementById('get-details');
+            if (!target || !stickyCTA) return;
+
+            const targetParams = target.getBoundingClientRect();
+
+            // Hide whenever the top of the form is near the viewport bottom or fully in view
+            // Using a threshold (e.g., window height - 100px)
+            if (targetParams.top < window.innerHeight - 50) {
+                stickyCTA.classList.add('translate-y-24'); // Push down off-screen
+            } else {
+                stickyCTA.classList.remove('translate-y-24'); // Bring back up
+            }
+        });
+
+        /* --- THE GLENEAGLES TRUTH ENGINE (Global State) --- */
+
+        // 1. RICH UNIT DATABASE (Verified 8 Units)
+        // Installment/Rent calculated dynamically based on price ratios if not hardcoded.
+        // Base Ratios from C1: Inst(0.00465), Rent(0.00724), Airbnb(0.000646)
+        const UNIT_DB = {
+            // RECOMMENDED
+            'c1': { name: "Type C1", size: "409 sqft", spa_price: 460500, price: 386820, icon: "⭐", recommended: true },
+            'g2b': { name: "Type G2b", size: "398 sqft", spa_price: 448600, price: 376824, icon: "🪟", recommended: true },
+            'a': { name: "Type A", size: "463 sqft", spa_price: 520000, price: 436800, icon: "🏢", recommended: true },
+            'b2': { name: "Type B2", size: "484 sqft", spa_price: 542900, price: 456036, icon: "🏢", recommended: true },
+            'h1': { name: "Type H1", size: "517 sqft", spa_price: 596500, price: 501060, icon: "🏥", recommended: true },
+            'k3': { name: "Type K3", size: "678 sqft", spa_price: 725900, price: 609756, icon: "🔑", recommended: true },
+
+            // SHOW ALL (Hidden by default)
+            'g2': { name: "Type G2", size: "495 sqft", spa_price: 561100, price: 471324, icon: "🏢", recommended: false },
+            'k4a': { name: "Type K4a", size: "463 sqft", spa_price: 520700, price: 437388, icon: "🏢", recommended: false }
+        };
+
+        // 2. STATE CONTAINER
+        let APP_STATE = {
+            unit: 'c1',
+            plan: 'high',   // Default: Airbnb
+            showAllUnits: true,
+
+            // New Configuration Objects
+            loan: {
+                interest: 4.0,
+                margin: 90,
+                tenure: 35
+            },
+            stable: {
+                psf: 5.00,
+                fee: 10,
+                fixed: 0
+            },
+            airbnb: {
+                rate: 280,
+                occupancy: 0.60,
+                fee: 25,
+                fixed: 0
+            }
+        };
+
+        // 3. ACTIONS
+        function setUnit(id) {
+            APP_STATE.unit = id;
+            if (id === 'SHOW_ALL') {
+                toggleShowAll();
+                setUnit('c1');
+            } else {
+                render();
+            }
+        }
+
+        function setPlan(mode) {
+            APP_STATE.plan = mode;
+            render();
+        }
+
+        // Consolidated Update Functions
+        function updateStableParam(type, val) {
+            APP_STATE.stable[type] = parseFloat(val);
+            render();
+        }
+
+        function updateLoanParam(type, val) {
+            APP_STATE.loan[type] = parseFloat(val);
+            render();
+        }
+
+        function setAirbnbParam(type, val) {
+            APP_STATE.airbnb[type] = parseFloat(val);
+            render();
+        }
+
+        // Helper: Mortgage Calculator (PMT)
+        function calculateLoan(price, margin, interest, tenure) {
+            const principal = price * (margin / 100);
+            const monthlyRate = (interest / 100) / 12;
+            const numPayments = tenure * 12;
+
+            if (interest === 0) return principal / numPayments;
+
+            const x = Math.pow(1 + monthlyRate, numPayments);
+            const monthlyPayment = (principal * x * monthlyRate) / (x - 1);
+
+            return Math.round(monthlyPayment);
+        }
+
+        function toggleShowAll() {
+            APP_STATE.showAllUnits = true;
+            document.getElementById('unit-selector').innerHTML = '';
+            render();
+        }
+
+
+
+        // 4. RENDER ENGINE (Calculations & UI)
+        function render() {
+            const unit = UNIT_DB[APP_STATE.unit];
+
+            // A. Populate Selector (Only if not already populated to avoid flicker/reset)
+            const selector = document.getElementById('unit-selector');
+
+            // A. Populate Selector if needed
+            if (selector.options.length === 0) {
+                const sortedUnits = Object.entries(UNIT_DB).sort(([, a], [, b]) => a.price - b.price);
+                sortedUnits.forEach(([key, param]) => {
+                    const opt = document.createElement('option');
+                    opt.value = key;
+                    let label = `${param.name} (${param.size}) - RM ${param.price.toLocaleString()}`;
+                    if (key === 'c1') label += " (preferred)";
+                    if (key === 'g2b') label += " (entry-level)";
+                    opt.text = label;
+                    selector.add(opt);
+                });
+                selector.value = APP_STATE.unit;
+            }
+
+            // Sync Value
+            if (selector.value !== APP_STATE.unit) {
+                // Check existence first
+                let exists = Array.from(selector.options).some(o => o.value === APP_STATE.unit);
+                if (exists) selector.value = APP_STATE.unit;
+            }
+
+            // B. Strategy Buttons
+            const activeClass = "py-2 px-3 rounded-lg text-sm font-bold shadow-sm bg-white text-apple-text border border-gray-200 transition-all border-apple-text ring-1 ring-black/5";
+            const inactiveClass = "py-2 px-3 rounded-lg text-sm font-bold text-gray-400 hover:text-apple-text transition-all";
+            document.getElementById('btn-plan-stable').className = APP_STATE.plan === 'stable' ? activeClass : inactiveClass;
+            document.getElementById('btn-plan-high').className = APP_STATE.plan === 'high' ? activeClass : inactiveClass;
+
+            // C. CALCULATIONS
+            // 1. Loan (Dynamic)
+            // Use current NOW price for loan calculation as per request
+            const loanAmount = unit.price * (APP_STATE.loan.margin / 100);
+            const installment = calculateLoan(unit.price, APP_STATE.loan.margin, APP_STATE.loan.interest, APP_STATE.loan.tenure);
+
+            // 2. Income & Costs
+            let grossIncome = 0;
+            let mgmtCost = 0;
+            let feePercent = 0;
+            let fixedCosts = 0;
+
+            if (APP_STATE.plan === 'stable') {
+                // Stable: Size * PSF
+                const sizeInt = parseInt(unit.size.replace(/\D/g, ''));
+                grossIncome = Math.round(sizeInt * APP_STATE.stable.psf);
+                feePercent = APP_STATE.stable.fee;
+                fixedCosts = APP_STATE.stable.fixed;
+            } else {
+                // Airbnb: Rate * 30 * Occ
+                grossIncome = Math.round(APP_STATE.airbnb.rate * 30 * APP_STATE.airbnb.occupancy);
+                feePercent = APP_STATE.airbnb.fee;
+                fixedCosts = APP_STATE.airbnb.fixed;
+            }
+
+            // Universal Costs
+            mgmtCost = Math.round(grossIncome * (feePercent / 100));
+
+            // 3. NET Calculation (Income - Mgmt - Fixed - Loan)
+            const netCashflow = grossIncome - mgmtCost - fixedCosts - installment;
+            const isPositive = netCashflow >= 0;
+
+            // NEW: Calc Assumptions Snapshot
+            let assumptionsLine = '';
+            if (APP_STATE.plan === 'stable') {
+                assumptionsLine = `Assumptions: RM${APP_STATE.stable.psf.toFixed(2)}/psf rent • ${APP_STATE.stable.fee}% management fee • Net includes loan + operating costs.`;
+            } else {
+                assumptionsLine = `Assumptions: RM${APP_STATE.airbnb.rate}/night • ${Math.round(APP_STATE.airbnb.occupancy * 100)}% occupancy • ${APP_STATE.airbnb.fee}% management fee • Net includes loan + operating costs.`;
+            }
+
+            // D. RENDER RESULT (Neutral Tone, "Net Extra Left")
+            const resultDisplay = document.getElementById('dynamic-result');
+            resultDisplay.innerHTML = `
+                 <div class="h-full flex flex-col justify-center items-center md:items-start text-center md:text-left w-full">
+                     <!-- Inner Content Wrapper for consistent alignment -->
+                     <div class="w-full max-w-[360px] md:max-w-none md:pr-12">
+                         
+                         <div class="text-[10px] md:text-xs font-bold uppercase text-apple-subtext tracking-widest mb-2">NET Extra Left / Month</div>
+                         
+                         <div class="flex items-baseline justify-center md:justify-start gap-2 mb-2">
+                            <span class="text-5xl md:text-7xl font-semibold tracking-tighter ${isPositive ? 'text-apple-text' : 'text-apple-red'}">
+                                ${isPositive ? '+' : ''}RM ${netCashflow.toLocaleString()}
+                            </span>
+                         </div> 
+                         
+                         <div class="text-sm text-apple-subtext mb-6 font-medium">
+                            After estimated costs & full loan repayment.
+                         </div>
+
+                         <!-- NEW: Single Line Snapshot (Left Aligned, Wrapped) -->
+                         <div class="text-[10px] text-gray-400 mb-6 -mt-4 text-left block w-full leading-relaxed">
+                            ${assumptionsLine}
+                         </div>
+                         
+                         <!-- Price Pill (Full Width on Mobile, Left Aligned) -->
+                         <div class="w-full flex items-center justify-center md:justify-start gap-2 font-medium text-xs text-apple-subtext bg-gray-50 px-4 py-2 rounded-xl border border-gray-100 box-border">
+                            <span>Based on NOW Price:</span>
+                            <span class="text-apple-text font-bold">RM ${unit.price.toLocaleString()}</span>
+                            <span class="line-through decoration-gray-300">RM ${unit.spa_price.toLocaleString()}</span>
+                         </div>
+
+                     </div>
+                </div>
+            `;
+
+            // E. RENDER BREAKDOWN (Controls)
+            let settingsHTML = '';
+
+            if (APP_STATE.plan === 'stable') {
+                settingsHTML = `
+                    <div class="space-y-3 pt-3 pb-2 border-t border-gray-100">
+                        <div class="flex justify-between items-center text-sm">
+                             <span class="text-apple-subtext font-medium">Rent PSF (RM)</span>
+                             <input type="number" step="0.10" value="${APP_STATE.stable.psf.toFixed(2)}" 
+                                onchange="updateStableParam('psf', this.value)"
+                                class="w-20 p-1 text-right font-bold text-apple-text bg-gray-50 rounded border border-gray-200 focus:ring-2 focus:ring-gray-200 outline-none">
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                             <span class="text-apple-subtext font-medium">Mgmt Fee (%)</span>
+                             <input type="number" value="${APP_STATE.stable.fee}" 
+                                onchange="updateStableParam('fee', this.value)"
+                                class="w-16 p-1 text-right font-bold text-apple-text bg-gray-50 rounded border border-gray-200 focus:ring-2 focus:ring-gray-200 outline-none">
+                        </div>
+                    </div>`;
+            } else {
+                // ... Airbnb Controls (Same as before, creating for context) ...
+                const rates = [280, 350, 500];
+                const occs = [0.5, 0.6, 0.7];
+                const fees = [20, 25, 30];
+
+                const pillBtn = (label, active, onClick) =>
+                    `<button onclick="${onClick}" class="px-2 py-1 rounded text-xs font-bold transition-all ${active ? 'bg-apple-text text-white shadow-md transform scale-105' : 'bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-gray-600'}">${label}</button>`;
+
+                settingsHTML = `
+                    <div class="space-y-3 pt-3 pb-2 border-t border-gray-100">
+                        <div class="flex justify-between items-center">
+                            <span class="text-[10px] font-bold uppercase text-apple-subtext tracking-wider">Nightly</span>
+                            <div class="flex gap-1">
+                                ${rates.map(r => pillBtn(`RM${r}`, APP_STATE.airbnb.rate === r, `setAirbnbParam('rate', ${r})`)).join('')}
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-[10px] font-bold uppercase text-apple-subtext tracking-wider">Occupancy %</span>
+                            <div class="flex gap-1">
+                                ${occs.map(o => pillBtn(`${Math.round(o * 100)}%`, APP_STATE.airbnb.occupancy === o, `setAirbnbParam('occupancy', ${o})`)).join('')}
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-[10px] font-bold uppercase text-apple-subtext tracking-wider">Management cost</span>
+                            <div class="flex gap-1">
+                                ${fees.map(f => pillBtn(`${f}%`, APP_STATE.airbnb.fee === f, `setAirbnbParam('fee', ${f})`)).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+
+
+
+            // Loan Assumptions (Collapsed HTML Details) - Updated with Part B
+            const loanHTML = `
+                <details class="text-xs group">
+                    <summary class="cursor-pointer text-gray-400 hover:text-apple-text font-medium list-none flex justify-between items-center pt-2">
+                        <span>Edit Loan Assumptions</span>
+                        <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="pt-3 space-y-2 pl-2 border-l-2 border-gray-100 mt-2">
+                         <div class="flex justify-between items-center">
+                             <span class="text-apple-subtext">Interest Rate (%)</span>
+                             <input type="number" step="0.1" value="${APP_STATE.loan.interest}" 
+                                onchange="updateLoanParam('interest', this.value)"
+                                class="w-16 p-1 text-right font-bold text-gray-600 bg-gray-50 rounded border border-gray-200 outline-none">
+                         </div>
+                         <div class="flex justify-between items-center">
+                             <span class="text-apple-subtext">Margin of Finance (%)</span>
+                             <input type="number" value="${APP_STATE.loan.margin}" 
+                                onchange="updateLoanParam('margin', this.value)"
+                                class="w-16 p-1 text-right font-bold text-gray-600 bg-gray-50 rounded border border-gray-200 outline-none">
+                         </div>
+                         <div class="flex justify-between items-center">
+                             <span class="text-apple-subtext">Tenure (Years)</span>
+                             <input type="number" value="${APP_STATE.loan.tenure}" 
+                                onchange="updateLoanParam('tenure', this.value)"
+                                class="w-16 p-1 text-right font-bold text-gray-600 bg-gray-50 rounded border border-gray-200 outline-none">
+                         </div>
+
+                         <!-- NEW: Cost Breakdown (Part B) -->
+                         <div class="pt-4 mt-2 border-t border-gray-100">
+                            <p class="font-bold text-gray-400 mb-2 uppercase tracking-wider text-[10px]">What costs are included?</p>
+                            <ul class="list-disc pl-4 space-y-1 text-gray-400">
+                                <li>Loan repayment (principal + interest)</li>
+                                <li>Management / operator fees</li>
+                                <li>Utilities estimate</li>
+                                <li>Maintenance + sinking fund estimate</li>
+                                <li>Platform fees (Airbnb)</li>
+                                <li>Cleaning / turnover (Airbnb)</li>
+                                <li>Minor repairs reserve</li>
+                            </ul>
+                            <p class="mt-2 text-[10px] text-gray-300 italic">Results are estimates, not guarantees. Seasonality + execution affect actual results.</p>
+                         </div>
+                    </div>
+                </details>
+            `;
+
+            const summaryDisplay = document.getElementById('dynamic-summary');
+            summaryDisplay.innerHTML = `
+                <div class="space-y-4">
+                    <!-- Breakdown List -->
+                    <div class="divide-y divide-gray-100">
+                        <!-- Est Income -->
+                        <div class="flex justify-between py-2 text-sm">
+                            <span class="text-apple-subtext font-medium">Est. Gross Income</span>
+                            <span class="font-bold text-apple-blue">+ RM ${grossIncome.toLocaleString()}</span>
+                        </div>
+                        
+                        <!-- Monthly Loan -->
+                        <div class="flex justify-between py-2 text-sm">
+                            <span class="text-apple-subtext font-medium">Monthly Repayment</span>
+                            <span class="font-bold text-apple-red">- RM ${installment.toLocaleString()}</span>
+                        </div>
+
+                         <!-- Mgmt Fee Value -->
+                        <div class="flex justify-between py-2 text-sm">
+                            <span class="text-apple-subtext font-medium">Mgmt Costs</span>
+                            <span class="font-bold text-apple-red">- RM ${mgmtCost.toLocaleString()}</span>
+                        </div>
+
+                        <!-- Dynamic Controls -->
+                        ${settingsHTML}
+                        
+
+
+                        <!-- Loan Assumptions -->
+                        ${loanHTML}
+
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize (Render Logic + Modal Data)
+        render();
+
+        // Modal Logic
+        const modalData = {
+            mou: {
+                img: "./assets/management-check-mou.jpg",
+                alt: "Management check supporting document and partnership photo",
+                caption: "Operating Agreement: Maxi Manhattan x Gleneagles Hospital",
+                meta: "Verified: 2024-10-15 • Source: Official Press Signing"
+            },
+            map: {
+                img: "https://placehold.co/1000x800/white/black?text=VERIFIED+WALKING+MAP+(160m)",
+                alt: "Map showing 160m walking distance to Gleneagles Hospital",
+                caption: "Walking Distance Verification: 160 Meters (2 Minutes)",
+                meta: "Verified: Google Maps & Site Survey 2026"
+            }
+        };
+
+        function openModal(type) {
+            const backdrop = document.getElementById('modal-backdrop');
+            const content = document.getElementById('modal-content');
+            const img = document.getElementById('modal-img');
+            const caption = document.getElementById('modal-caption');
+            const meta = document.getElementById('modal-meta');
+
+            img.src = modalData[type].img;
+            img.alt = modalData[type].alt;
+            caption.innerText = modalData[type].caption;
+            meta.innerText = modalData[type].meta;
+
+            backdrop.classList.remove('hidden');
+            // Small delay for CSS transition
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const backdrop = document.getElementById('modal-backdrop');
+            const content = document.getElementById('modal-content');
+
+            backdrop.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+
+            setTimeout(() => {
+                backdrop.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+    <!-- PROOF MODALS -->
+    <div id="modal-backdrop"
+        class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0"
+        onclick="closeModal()">
+        <div class="bg-white rounded-2xl max-w-2xl w-full relative overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300"
+            id="modal-content" onclick="event.stopPropagation()">
+            <!-- Header -->
+            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-apple-green animate-pulse"></span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Official Evidence</span>
+                </div>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Image -->
+            <div class="relative bg-gray-100 flex items-center justify-center">
+                <img id="modal-img" src="" class="max-h-[70vh] w-auto mx-auto object-contain">
+            </div>
+            <!-- Caption -->
+            <div class="px-6 py-4 bg-white">
+                <p class="text-sm font-medium text-apple-text" id="modal-caption"></p>
+                <p class="text-xs text-apple-subtext mt-1" id="modal-meta"></p>
+            </div>
+        </div>
+    </div>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Tenants real?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The MOU is signed. The walkway is 160m to Gleneagles Hospital KL."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Still cover loan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Switch to Plan B (Long Term Rental - Type J1) targeting Specialist Doctors."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Any catch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No investment is guaranteed. Projections are based on verifiable market rates (Agoda/AirDNA) for Jalan Ampang."
+        }
+      }]
+    }
+    </script>
+</body>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateListing",
+      "name": "The Suites, Jalan Ampang KL (KL Core Collection)",
+      "description": "Operational Audit Asset linked to Gleneagles Hospital.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Maxi Manhattan"
+      },
+      "areaServed": {
+        "@type": "Organization",
+        "name": "Gleneagles Hospital Kuala Lumpur",
+        "sameAs": "https://www.wikidata.org/wiki/Q5568285"
+      }
+    }
+    </script>
+
+</html>
