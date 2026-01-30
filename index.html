@@ -616,23 +616,21 @@
                     </p>
                 </div>
 
-                <form id="leadForm" method="POST"
-                    action="https://script.google.com/macros/s/AKfycby7l7cM752BgEmk-7948RFmOlNjPkF6H74FuxnUX2EmfqVpu_TiHZ-ZwV9UnCcSo0NB/exec"
-                    class="space-y-4 max-w-md mx-auto"
-                    onsubmit="document.getElementById('unitHidden').value = (UNIT_DB[APP_STATE.unit] ? UNIT_DB[APP_STATE.unit].name : APP_STATE.unit); document.getElementById('strategyHidden').value = APP_STATE.plan;">
+                <form id="leadForm" class="space-y-4 max-w-md mx-auto" novalidate>
 
-                    <input name="name" placeholder="Name" required
+                    <input id="nameInput" name="name" placeholder="Name" required
                         class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-base focus:ring-2 focus:ring-apple-text outline-none transition-all" />
 
-                    <input name="phone" type="tel" placeholder="WhatsApp number" required
-                        class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-base focus:ring-2 focus:ring-apple-text outline-none transition-all" />
+                    <div>
+                        <input id="phoneInput" name="phone" type="tel" placeholder="WhatsApp number" required
+                            class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-base focus:ring-2 focus:ring-apple-text outline-none transition-all" />
+                        <p id="phoneError" class="text-xs text-red-500 mt-1 hidden text-left pl-1">
+                            Please enter a valid WhatsApp number (e.g. 60123456789)
+                        </p>
+                    </div>
 
-                    <!-- Hidden fields (auto-filled from calculator selections) -->
-                    <input type="hidden" name="unit" id="unitHidden" />
-                    <input type="hidden" name="strategy" id="strategyHidden" />
-
-                    <button type="submit"
-                        class="w-full bg-apple-text text-white font-bold py-4 rounded-xl text-lg hover:bg-black transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2">
+                    <button type="submit" id="submitBtn" disabled
+                        class="w-full bg-apple-text text-white font-bold py-4 rounded-xl text-lg hover:bg-black transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
                         Continue to WhatsApp
                         <svg class="w-5 h-5 text-apple-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1310,6 +1308,101 @@
                 backdrop.classList.add('hidden');
             }, 300);
         }
+
+        /* --- LEAD CAPTURE LOGIC (Fetch + WhatsApp) --- */
+        const GAS_URL = "https://script.google.com/macros/s/AKfycbztK7ZIU0eGv4x5vgs2D8tWARqrZcfgKmdzEzEk0UvgRHy1-598RaVP306HoLRaMKRS/exec";
+        const AGENT_PHONE = "60143317056";
+
+        const leadForm = document.getElementById('leadForm');
+        const nameInput = document.getElementById('nameInput');
+        const phoneInput = document.getElementById('phoneInput');
+        const submitBtn = document.getElementById('submitBtn');
+        const phoneError = document.getElementById('phoneError');
+
+        // Validation Logic
+        function validateLeadForm() {
+            const name = nameInput.value.trim();
+            const phoneRaw = phoneInput.value.trim();
+            const phoneClean = phoneRaw.replace(/[\s\-\+]/g, '');
+
+            // Rules: Name >= 2 chars, Phone 9-15 digits
+            const isNameValid = name.length >= 2;
+            const isPhoneValid = /^\d{9,15}$/.test(phoneClean);
+
+            // Error Message UI
+            if (phoneRaw.length > 0 && !isPhoneValid) {
+                phoneError.classList.remove('hidden');
+            } else {
+                phoneError.classList.add('hidden');
+            }
+
+            // Button State
+            if (isNameValid && isPhoneValid) {
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.disabled = true;
+            }
+        }
+
+        // Event Listeners for Real-time Validation
+        nameInput.addEventListener('input', validateLeadForm);
+        phoneInput.addEventListener('input', validateLeadForm);
+
+        // Generate Lead ID
+        function generateLeadId() {
+            const now = new Date();
+            const y = now.getFullYear().toString().substr(-2);
+            const m = (now.getMonth() + 1).toString().padStart(2, '0');
+            const d = now.getDate().toString().padStart(2, '0');
+            const h = now.getHours().toString().padStart(2, '0');
+            const min = now.getMinutes().toString().padStart(2, '0');
+            const random = Math.floor(Math.random() * 90 + 10); // 10-99
+            return `${y}${m}${d}-${h}${min}-ZX${random}`;
+        }
+
+        // Submission Handler
+        leadForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (submitBtn.disabled) return;
+
+            // 1. Lock Button
+            submitBtn.disabled = true;
+
+            // 2. Prepare Data
+            const name = nameInput.value.trim();
+            const phoneRaw = phoneInput.value.trim();
+            const leadId = generateLeadId();
+            const unitName = (UNIT_DB[APP_STATE.unit] ? UNIT_DB[APP_STATE.unit].name : APP_STATE.unit);
+
+            const payload = {
+                timestamp: new Date().toISOString(),
+                leadId: leadId,
+                name: name,
+                phone: phoneRaw, // Send raw input for agent reference
+                leadSource: "website_form",
+                status: "new",
+                details: `Unit: ${unitName} | Strategy: ${APP_STATE.plan}`
+            };
+
+            // 3. Background Log (Fetch) - Non-blocking
+            fetch(GAS_URL, {
+                method: "POST",
+                mode: "no-cors", // Opaque request for Google Scripts
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            }).catch(err => console.error("Log failed", err));
+
+            // 4. Redirect to WhatsApp (Direct Link)
+            const message = `Hi, I want the full details.\nLeadID: ${leadId}\nName: ${name}\nWhatsApp: ${phoneRaw}`;
+            const waUrl = `https://wa.me/${AGENT_PHONE}?text=${encodeURIComponent(message)}`;
+
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+            // 5. Re-enable after delay (optional UX)
+            setTimeout(() => {
+                validateLeadForm(); // Check valid state again
+            }, 3000);
+        });
     </script>
     <!-- PROOF MODALS -->
     <div id="modal-backdrop"
