@@ -1356,8 +1356,15 @@
             const d = now.getDate().toString().padStart(2, '0');
             const h = now.getHours().toString().padStart(2, '0');
             const min = now.getMinutes().toString().padStart(2, '0');
-            const random = Math.floor(Math.random() * 90 + 10); // 10-99
-            return `${y}${m}${d}-${h}${min}-ZX${random}`;
+
+            // Sequential Counter (001 - 999) persisted in localStorage
+            let counter = parseInt(localStorage.getItem('zx_lead_counter') || '0');
+            counter++;
+            if (counter > 999) counter = 1;
+            localStorage.setItem('zx_lead_counter', counter.toString());
+
+            const seq = counter.toString().padStart(3, '0');
+            return `${y}${m}${d}-${h}${min}-ZX${seq}`;
         }
 
         // Submission Handler
@@ -1393,7 +1400,7 @@
             }).catch(err => console.error("Log failed", err));
 
             // 4. Redirect to WhatsApp (Direct Link)
-            const message = `Hi, I want the full details.\nLeadID: ${leadId}\nName: ${name}\nWhatsApp: ${phoneRaw}`;
+            const message = `Hi, please send me more info! LeadID: ${leadId}`;
             const waUrl = `https://wa.me/${AGENT_PHONE}?text=${encodeURIComponent(message)}`;
 
             window.open(waUrl, '_blank', 'noopener,noreferrer');
