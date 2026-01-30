@@ -1378,6 +1378,12 @@
             // 2. Prepare Data
             const name = nameInput.value.trim();
             const phoneRaw = phoneInput.value.trim();
+
+            // Normalize Phone
+            let phoneNorm = phoneRaw.replace(/\D/g, ''); // Remove non-digits
+            if (phoneNorm.startsWith('0')) {
+                phoneNorm = '6' + phoneNorm;
+            }
             const leadId = generateLeadId();
             const unitName = (UNIT_DB[APP_STATE.unit] ? UNIT_DB[APP_STATE.unit].name : APP_STATE.unit);
 
@@ -1385,7 +1391,7 @@
                 timestamp: new Date().toISOString(),
                 leadId: leadId,
                 name: name,
-                phone: phoneRaw, // Send raw input for agent reference
+                phone: phoneNorm, // Send normalized
                 leadSource: "website_form",
                 status: "new",
                 details: `Unit: ${unitName} | Strategy: ${APP_STATE.plan}`
