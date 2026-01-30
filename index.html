@@ -911,16 +911,16 @@
         // Base Ratios from C1: Inst(0.00465), Rent(0.00724), Airbnb(0.000646)
         const UNIT_DB = {
             // RECOMMENDED
-            'c1': { name: "Type C1", size: "409 sqft", spa_price: 460500, price: 386820, icon: "⭐", recommended: true },
-            'g2b': { name: "Type G2b", size: "398 sqft", spa_price: 448600, price: 376824, icon: "🪟", recommended: true },
-            'a': { name: "Type A", size: "463 sqft", spa_price: 520000, price: 436800, icon: "🏢", recommended: true },
-            'b2': { name: "Type B2", size: "484 sqft", spa_price: 542900, price: 456036, icon: "🏢", recommended: true },
-            'h1': { name: "Type H1", size: "517 sqft", spa_price: 596500, price: 501060, icon: "🏥", recommended: true },
-            'k3': { name: "Type K3", size: "678 sqft", spa_price: 725900, price: 609756, icon: "🔑", recommended: true },
+            'c1': { name: "C1 & C1M", size: "409 sqft", spa_price: 460500, price: 386820, icon: "⭐", recommended: true },
+            'g2b': { name: "G2b", size: "398 sqft", spa_price: 448600, price: 376824, icon: "🪟", recommended: true },
+            'a': { name: "A", size: "463 sqft", spa_price: 520000, price: 436800, icon: "🏢", recommended: true },
+            'b2': { name: "B2", size: "484 sqft", spa_price: 542900, price: 456036, icon: "🏢", recommended: true },
+            'h1': { name: "H1", size: "517 sqft", spa_price: 596500, price: 501060, icon: "🏥", recommended: true },
+            'k3': { name: "K3", size: "678 sqft", spa_price: 725900, price: 609756, icon: "🔑", recommended: true },
 
             // SHOW ALL (Hidden by default)
-            'g2': { name: "Type G2", size: "495 sqft", spa_price: 561100, price: 471324, icon: "🏢", recommended: false },
-            'k4a': { name: "Type K4a", size: "463 sqft", spa_price: 520700, price: 437388, icon: "🏢", recommended: false }
+            'g2': { name: "G2", size: "495 sqft", spa_price: 561100, price: 471324, icon: "🏢", recommended: false },
+            'k4a': { name: "K4a", size: "463 sqft", spa_price: 520700, price: 437388, icon: "🏢", recommended: false }
         };
 
         // 2. STATE CONTAINER
@@ -1012,12 +1012,20 @@
             // A. Populate Selector if needed
             if (selector.options.length === 0) {
                 const sortedUnits = Object.entries(UNIT_DB).sort(([, a], [, b]) => a.price - b.price);
+
+                // Helper to create strikethrough text for dropdown options
+                const strike = (text) => text.split('').map(char => char + '\u0336').join('');
+
                 sortedUnits.forEach(([key, param]) => {
                     const opt = document.createElement('option');
                     opt.value = key;
-                    let label = `${param.name} (${param.size}) - RM ${param.price.toLocaleString()}`;
-                    if (key === 'c1') label += " (preferred)";
-                    if (key === 'g2b') label += " (entry-level)";
+
+                    const spaText = `SPA RM${param.spa_price.toLocaleString()}`;
+                    const struckSpa = strike(spaText);
+
+                    let label = `${param.name} (${param.size}) ${struckSpa} | Promo: RM${param.price.toLocaleString()}`;
+                    if (key === 'c1') label += " (Best Value)";
+                    if (key === 'g2b') label += " (Lowest Price)";
                     opt.text = label;
                     selector.add(opt);
                 });
