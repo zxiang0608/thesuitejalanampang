@@ -1413,7 +1413,10 @@
                 body: JSON.stringify(payload)
             }).catch(err => console.error("Log failed", err));
 
-            // 4. Redirect to WhatsApp (Direct Link)
+            // 4. GA4 Event Tracking
+            gtag('event', 'whatsapp_click', { 'event_category': 'lead', 'event_label': 'footer_form' });
+
+            // 5. Redirect to WhatsApp (Direct Link)
             const message = `Hi, please send me more info! LeadID: ${leadId}`;
             const waUrl = `https://wa.me/${AGENT_PHONE}?text=${encodeURIComponent(message)}`;
 
